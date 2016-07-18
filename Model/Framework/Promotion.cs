@@ -10,7 +10,6 @@ namespace DataLayer.Framework
     public partial class Promotion
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PromotionId { get; set; }
 
         [StringLength(250)]

@@ -32,9 +32,9 @@
 
             context.Credentials.AddOrUpdate(SeedCredential());
 
-            context.Promotions.AddOrUpdate(p => p.PromotionId, SeedPromotion());
+            context.Promotions.AddOrUpdate(p=>p.PromotionName, SeedPromotion());
 
-            context.OrderStatuses.AddOrUpdate(p => p.OrderStatusId, SeedOrderStatus());
+            context.OrderStatuses.AddOrUpdate(p => p.Name, SeedOrderStatus());
 
             context.MenuTypes.AddOrUpdate(SeedMenuType());
 
@@ -410,10 +410,10 @@
                     },
                     new User
                     {
-                        Name = "van nguyen",
+                        Name = "tuan van",
                         Password = "123",
                         GroupId = "ADMIN",
-                        UserName = "vannguyen",
+                        UserName = "tuanvan",
                         Point = 13999000,
                         Address = "16 phan huy on",
                         Email = "vanvan@gmail.com",
@@ -620,26 +620,37 @@
                 {
                     new OrderStatus
                     {
+                        OrderStatusId = 0,
                         Name = "Đang chờ xử lý",
                         Description = "đã nhận được đơn hàng của bạn và sẽ được nhân viên xử lý trong thời gian sớm nhất."
                     },
                     new OrderStatus
                     {
+                        OrderStatusId = 1,
                         Name = "Đã xử lý",
                         Description = "Nhân viên đã gọi hoặc nhắn tin cho bạn để xác nhận ngày giờ giao hàng. Khi nhân viên gọi, bạn có thể thay đổi sản phẩm và thông tin giao hàng."
                     },
                     new OrderStatus
                     {
+                        OrderStatusId = 2,
                         Name = "Đã giao hàng",
                         Description = "Gói hàng của bạn đã rời kho và đã được chuyển qua bộ phận giao hàng. Bạn không thể tự thay đổi sản phẩm hay thông tin giao hàng với tình trạng đơn hàng này."
                     },
                     new OrderStatus
                     {
+                        OrderStatusId = 3,
+                        Name = "Đơn hàng hủy bởi khách hàng",
+                        Description = "hủy đơn hàng theo yêu cầu của khách hàng."
+                    },
+                    new OrderStatus
+                    {
+                        OrderStatusId = 4,
                         Name = "Đơn hàng tự hủy",
                         Description = "Trong trường hợp nhân viên không thể liên lạc được với khách hàng trong nhiều ngày và không nhận được thông báo gì từ khách hàng, nhân viên có quyền hủy đơn hàng của bạn mà không cần phải thông báo."
                     },
                     new OrderStatus
                     {
+                        OrderStatusId = 5,
                         Name = "Giao hàng thành công",
                         Description = "Xác nhận giao hàng thành công"
                     },
